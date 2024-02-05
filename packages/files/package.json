@@ -1,0 +1,19 @@
+{
+  "name": "@asafe/files",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/files.js",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only --exit-child ./files.ts",
+    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@asafe/utils": "1.0.0",
+    "@aws-sdk/client-s3": "^3.504.0",
+    "@fastify/multipart": "8.1.0",
+    "fastify": "4.25.2",
+    "fastify-plugin": "4.5.1"
+  }
+}

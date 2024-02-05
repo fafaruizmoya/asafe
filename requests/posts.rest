@@ -1,0 +1,117 @@
+@baseUrl = http://localhost:3000
+
+# @name adminLogin
+POST {{baseUrl}}/api/login
+Content-Type: application/json; charset=utf-8
+
+{
+  "email": "admin@admin.com",
+  "password": "Admin_1234"
+}
+
+###
+@adminAccessToken = {{adminLogin.response.body.$.accessToken}}
+
+###
+
+# @name allPost
+GET {{baseUrl}}/api/posts
+Authorization: Bearer {{adminAccessToken}}
+
+###
+
+# @name allPostByUser
+GET {{baseUrl}}/api/posts?user=5
+Authorization: Bearer {{adminAccessToken}}
+
+###
+
+# @name createPost
+POST {{baseUrl}}/api/posts
+Authorization: Bearer {{adminAccessToken}}
+Content-Type: application/json; charset=utf-8
+
+{
+  "title": "Text",
+  "content": "Long text"
+}
+
+###
+
+# @name updatePost
+PUT {{baseUrl}}/api/posts/1
+Authorization: Bearer {{adminAccessToken}}
+Content-Type: application/json; charset=utf-8
+
+{
+  "title": "Title",
+  "content": "Long text"
+}
+
+###
+
+# @name deletePost
+DELETE {{baseUrl}}/api/posts/7
+Authorization: Bearer {{adminAccessToken}}
+
+###
+
+# @name deletePostFromUser
+DELETE {{baseUrl}}/api/posts/user/7
+Authorization: Bearer {{adminAccessToken}}
+
+###
+
+# @name userLogin
+POST {{baseUrl}}/api/login
+Content-Type: application/json; charset=utf-8
+
+{
+  "email": "test2@example.com",
+  "password": "Test_12345"
+}
+
+###
+@userAccessToken = {{userLogin.response.body.$.accessToken}}
+
+
+# @name allPost
+GET {{baseUrl}}/api/posts
+Authorization: Bearer {{userAccessToken}}
+
+###
+
+# @name allPostByUser
+GET {{baseUrl}}/api/posts?user=1
+Authorization: Bearer {{userAccessToken}}
+
+
+###
+
+# @name createPost
+POST {{baseUrl}}/api/posts
+Authorization: Bearer {{userAccessToken}}
+Content-Type: application/json; charset=utf-8
+
+{
+  "title": "Title",
+  "content": "Long text"
+}
+
+###
+
+# @name updatePost
+PUT {{baseUrl}}/api/posts/1
+Authorization: Bearer {{userAccessToken}}
+Content-Type: application/json; charset=utf-8
+
+{
+  "title": "Title",
+  "content": "Long text"
+}
+
+###
+
+# @name deletePost
+DELETE {{baseUrl}}/api/posts/3
+Authorization: Bearer {{userAccessToken}}

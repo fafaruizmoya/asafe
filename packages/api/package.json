@@ -1,0 +1,23 @@
+{
+  "name": "@asafe/api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/server.js",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only --exit-child ./server.ts",
+    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+  },
+  "dependencies": {
+    "@asafe/auth": "1.0.0",
+    "@asafe/files": "1.0.0",
+    "@asafe/post": "1.0.0",
+    "@asafe/user": "1.0.0",
+    "@asafe/utils": "1.0.0",
+    "@fastify/cors": "8.5.0",
+    "@fastify/swagger": "8.14.0",
+    "@fastify/swagger-ui": "2.1.0",
+    "fastify": "4.25.2"
+  },
+  "devDependencies": {}
+}

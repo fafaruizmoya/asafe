@@ -1,0 +1,17 @@
+{
+  "name": "@asafe/user",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/user.js",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only --exit-child ./user.ts",
+    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@asafe/utils": "1.0.0",
+    "fastify": "4.25.2",
+    "fastify-plugin": "4.5.1"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@asafe/utils",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/utils.js",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only --exit-child ./utils.ts",
+    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@prisma/client": "5.8.1"
+  }
+}

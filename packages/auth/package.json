@@ -1,0 +1,19 @@
+{
+  "name": "@asafe/auth",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/auth.js",
+  "scripts": {
+    "dev": "tsnd --respawn --transpile-only --exit-child ./auth.ts",
+    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@asafe/user": "1.0.0",
+    "@asafe/utils": "1.0.0",
+    "@fastify/auth": "4.4.0",
+    "@fastify/jwt": "8.0.0",
+    "fastify": "4.25.2"
+  }
+}
